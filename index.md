@@ -24,6 +24,7 @@ Mein Schwerpunkt liegt auf:
 - praxisnahen, umsetzbaren Lösungen für Eigentümer
 
 ### Kontakt
+Kontaktieren Sie mich unverbindlich unter:
 
 E-Mail: info@florian-heyder.de  
 Telefon: +49 175 6685377
