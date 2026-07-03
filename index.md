@@ -5,7 +5,7 @@ title: Startseite
 
 ## Energieberatung für Wohngebäude
 
-Wir unterstützen Eigentümer, Bauherren und Verwaltungen bei der energetischen Bewertung und Optimierung von Wohngebäuden.
+Ich unterstütze Eigentümer, Bauherren und Verwaltungen bei der energetischen Bewertung und Optimierung von Wohngebäuden.
 
 ### Leistungen
 
@@ -17,7 +17,7 @@ Wir unterstützen Eigentümer, Bauherren und Verwaltungen bei der energetischen 
 
 ### Fokus
 
-Unser Schwerpunkt liegt auf:
+Mein Schwerpunkt liegt auf:
 
 - energetischer Sanierung bestehender Wohngebäude
 - wirtschaftlich optimierten Modernisierungskonzepten
@@ -25,9 +25,7 @@ Unser Schwerpunkt liegt auf:
 
 ### Kontakt
 
-*(Platzhalter – hier später Kontaktinformationen einfügen)*
-
-E-Mail: info@beispiel.de  
-Telefon: +49 ...
+E-Mail: info@florian-heyder.de  
+Telefon: +49 175 6685377
 
 ---
