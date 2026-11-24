@@ -1,0 +1,46 @@
+# Leistungen auf der Startseite. Reihenfolge = Reihenfolge auf der Seite.
+# "tag" ist optional (kleines Etikett neben dem Titel).
+
+- title: Individueller Sanierungsfahrplan (iSFP)
+  tag: BAFA-gefördert
+  text: >-
+    Ich nehme Ihr Haus vor Ort auf, berechne den energetischen Ist-Zustand und
+    lege fest, welche Maßnahmen in welcher Reihenfolge sinnvoll sind – von der
+    Dämmung bis zur Heizung. Sie erhalten den offiziellen Sanierungsfahrplan
+    mit Kosten, Einsparungen und Fördermöglichkeiten, und ich erläutere ihn
+    Ihnen persönlich.
+  points:
+    - Datenaufnahme vor Ort
+    - Berechnung nach DIN V 18599
+    - Maßnahmenpakete mit Kosten und Einsparung
+    - 50 % Zuschuss vom BAFA, den Antrag stelle ich
+
+- title: Heizungstausch und Wärmepumpen-Check
+  text: >-
+    Passt eine Wärmepumpe zu Ihrem Haus und zu Ihren Heizkörpern? Ich ermittle
+    die Heizlast, prüfe die nötigen Vorlauftemperaturen und vergleiche Gas- und
+    Wärmepumpenheizung über 20 Jahre – mit allen Annahmen offengelegt.
+  points:
+    - Heizlast und Vorlauftemperatur
+    - Kostenvergleich über 20 Jahre
+    - Einordnung der Heizungsförderung (KfW)
+
+- title: Begleitung von Einzelmaßnahmen
+  tag: förderfähig
+  text: >-
+    Wenn Sie Dach, Fassade oder Fenster erneuern, erstelle ich die technischen
+    Unterlagen für den BAFA-Antrag, prüfe Angebote auf Förderfähigkeit und
+    bestätige nach Abschluss die fachgerechte Umsetzung.
+  points:
+    - Technische Projektbeschreibung (TPB) für den Antrag
+    - Prüfung von Handwerkerangeboten
+    - Technischer Projektnachweis (TPN) nach Abschluss
+
+- title: Energieausweis
+  text: >-
+    Für Verkauf oder Vermietung: der gesetzlich vorgeschriebene Bedarfs- oder
+    Verbrauchsausweis – erstellt nach einer Begehung, nicht aus reinen
+    Online-Angaben.
+  points:
+    - Bedarfs- oder Verbrauchsausweis
+    - Begehung vor Ort

@@ -1,0 +1,320 @@
+---
+layout: default
+title: Energieberatung
+title_full: Energieberatung in Nürnberg, Fürth und Schwabach | Ingenieurbüro Dr.-Ing. Florian Heyder
+schema: true
+---
+
+{%- assign portrait = site.static_files | where: "path", "/assets/img/portrait.jpg" | first -%}
+
+<!-- ============ Einstieg ============ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1>Energieberatung für Ihr Haus in Nürnberg, Fürth und&nbsp;Schwabach</h1>
+      <p class="lead">
+        Ich zeige Ihnen, welche Sanierungsschritte sich für Ihr Bestandsgebäude lohnen,
+        in welcher Reihenfolge – und welche Förderung Sie dafür bekommen.
+        Unabhängig, nachvollziehbar gerechnet, persönlich erklärt.
+      </p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#kontakt">Erstgespräch anfragen</a>
+        <a class="btn btn--quiet" href="tel:{{ site.phone_link }}">Anrufen: {{ site.phone_display }}</a>
+      </div>
+      <ul class="facts">
+        <li><span class="facts__bar facts__bar--red" aria-hidden="true"></span>Eingetragen in der Energieeffizienz-Expertenliste des Bundes</li>
+        <li><span class="facts__bar facts__bar--green" aria-hidden="true"></span>Herstellerunabhängig, ohne Provisionen</li>
+        <li><span class="facts__bar facts__bar--blue" aria-hidden="true"></span>Promovierter Ingenieur aus Schwabach</li>
+      </ul>
+    </div>
+
+    <figure class="portrait">
+      {%- if portrait %}
+      <img src="{{ portrait.path | relative_url }}" alt="Dr.-Ing. Florian Heyder" width="800" height="1000">
+      {%- else %}
+      <div class="portrait__fallback" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      {%- endif %}
+      <figcaption>
+        <strong>{{ site.owner }}</strong>
+        Energieberater für Wohngebäude
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <figure class="band">
+      <div class="band__scale" role="img"
+           aria-label="Skala der Effizienzklassen von A+ bis H. Beispielhaus heute in Klasse G mit rund 225 kWh pro Quadratmeter und Jahr, nach Umsetzung des Sanierungsfahrplans in Klasse B mit rund 68 kWh pro Quadratmeter und Jahr.">
+        <div class="band__marker band__marker--now" style="--pos: 75%">
+          <span>Heute: Klasse G, ≈ 225</span>
+        </div>
+        <ol class="band__bar" aria-hidden="true">
+          <li style="--w: 30;  --c: #00843D">A+</li>
+          <li style="--w: 20;  --c: #2FA84F">A</li>
+          <li style="--w: 25;  --c: #8CC63F">B</li>
+          <li style="--w: 25;  --c: #C9DA2B">C</li>
+          <li style="--w: 30;  --c: #FFE11A">D</li>
+          <li style="--w: 30;  --c: #FDC010">E</li>
+          <li style="--w: 40;  --c: #F7941D">F</li>
+          <li style="--w: 50;  --c: #EE5A24">G</li>
+          <li style="--w: 50;  --c: #D7191C">H</li>
+        </ol>
+        <div class="band__ticks" aria-hidden="true">
+          <span style="--v: 0">0</span><span style="--v: 50">50</span><span style="--v: 100">100</span>
+          <span style="--v: 150">150</span><span style="--v: 200">200</span><span style="--v: 250">250</span>
+        </div>
+        <div class="band__marker band__marker--goal" style="--pos: 22.7%">
+          <span>Mit Sanierungsfahrplan: Klasse B, ≈ 68</span>
+        </div>
+      </div>
+      <figcaption>
+        Beispiel: Einfamilienhaus, Baujahr 1972. Endenergiebedarf in kWh pro m² Wohnfläche und Jahr,
+        Effizienzklassen wie im Energieausweis.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Leistungen ============ -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <header class="section__head">
+      <h2>Leistungen</h2>
+      <p>Für Eigentümerinnen und Eigentümer von Ein- und Zweifamilienhäusern, Reihenhäusern und kleineren Mehrfamilienhäusern.</p>
+    </header>
+
+    <div class="services">
+      {%- for s in site.data.leistungen %}
+      <article class="service">
+        <div class="service__title">
+          <h3>{{ s.title }}</h3>
+          {%- if s.tag %}<span class="tag">{{ s.tag }}</span>{% endif %}
+        </div>
+        <div class="service__body">
+          <p>{{ s.text }}</p>
+          {%- if s.points %}
+          <ul class="ticks">
+            {%- for p in s.points %}<li>{{ p }}</li>{% endfor %}
+          </ul>
+          {%- endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ Förderung ============ -->
+<section class="section section--tint" id="foerderung">
+  <div class="wrap split">
+    <div>
+      <h2>Förderung: doppelt sinnvoll</h2>
+      <p>
+        Der Staat fördert zuerst die Beratung selbst und danach die Umsetzung der Maßnahmen.
+        Ein Sanierungsfahrplan ist deshalb meist der günstigste Einstieg.
+      </p>
+
+      <h3>1. Zuschuss zur Beratung</h3>
+      <p>
+        Das BAFA übernimmt 50 % des Beratungshonorars für den Sanierungsfahrplan –
+        bis zu 650 € bei Ein- und Zweifamilienhäusern, bis zu 850 € ab drei Wohneinheiten.
+        Den Antrag stelle ich für Sie.
+      </p>
+
+      <h3>2. Mehr Zuschuss bei der Umsetzung</h3>
+      <p>
+        Für Maßnahmen an Dach, Fassade, Fenstern und Anlagentechnik gibt es 15 % Grundförderung.
+        Stehen sie in Ihrem Sanierungsfahrplan, verdoppeln sich die förderfähigen Kosten auf
+        60.000 € je Wohneinheit, und für Kosten oberhalb von 30.000 € kommen 5 Prozentpunkte
+        iSFP-Bonus hinzu.
+      </p>
+    </div>
+
+    <figure class="calc">
+      <figcaption>Zuschuss für Dämmmaßnahmen an einem Einfamilienhaus</figcaption>
+      <table>
+        <thead>
+          <tr><th scope="col">Förderfähige Kosten</th><th scope="col">ohne Fahrplan</th><th scope="col">mit Fahrplan</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">20.000 €</th><td>3.000 €</td><td>3.000 €</td></tr>
+          <tr><th scope="row">40.000 €</th><td>4.500 €</td><td>6.500 €</td></tr>
+          <tr><th scope="row">60.000 €</th><td>4.500 €</td><td class="calc__best">10.500 €</td></tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Stand {{ site.foerder_stand }}, ohne Einkommens- und Worst-Performing-Building-Bonus.
+        Förderbedingungen ändern sich regelmäßig – im Erstgespräch prüfe ich den aktuellen Stand für Ihr Vorhaben.
+        Alle Angaben ohne Gewähr.
+      </p>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ Ablauf ============ -->
+<section class="section" id="ablauf">
+  <div class="wrap">
+    <header class="section__head">
+      <h2>So läuft die Beratung ab</h2>
+    </header>
+
+    <ol class="steps">
+      <li>
+        <h3>Erstgespräch</h3>
+        <p>Per Telefon oder E-Mail klären wir, was Sie vorhaben und ob eine geförderte Beratung passt. Danach erhalten Sie ein schriftliches Angebot.</p>
+      </li>
+      <li>
+        <h3>Termin vor Ort</h3>
+        <p>Ich nehme Ihr Haus auf – Bauteile, Fenster, Heizung, Lüftung – und bespreche mit Ihnen Ihre Wünsche und Ihr Budget.</p>
+      </li>
+      <li>
+        <h3>Berechnung</h3>
+        <p>Ich bilde Ihr Gebäude nach DIN V 18599 ab und rechne Sanierungsvarianten mit Kosten, Einsparung und Förderung durch.</p>
+      </li>
+      <li>
+        <h3>Besprechung</h3>
+        <p>Sie erhalten Ihren Sanierungsfahrplan. Ich erkläre ihn Ihnen persönlich und beantworte Ihre Fragen.</p>
+      </li>
+      <li>
+        <h3>Umsetzung</h3>
+        <p>Auf Wunsch begleite ich die Maßnahmen: Angebote prüfen, Förderanträge vorbereiten, Nachweise erstellen.</p>
+      </li>
+    </ol>
+
+    <aside class="prepare">
+      <h3>Was Sie schon vorbereiten können</h3>
+      <ul class="ticks ticks--cols">
+        <li>Grundrisse, Schnitte und Ansichten</li>
+        <li>Baujahr und bisherige Modernisierungen</li>
+        <li>Heizkosten- oder Verbrauchsabrechnungen der letzten drei Jahre</li>
+        <li>Protokoll des Schornsteinfegers</li>
+        <li>Vorhandene Handwerkerangebote</li>
+        <li>Fotos von Heizung und Dachboden</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ Über mich ============ -->
+<section class="section section--tint" id="ueber-mich">
+  <div class="wrap split split--about">
+    <div>
+      <h2>Über mich</h2>
+      <p>
+        Ich bin promovierter Ingenieur der Strömungsmechanik und lebe in Schwabach.
+        In meiner Arbeit in der Verfahrenstechnik lege ich Beschichtungs- und Trocknungsanlagen
+        mit Simulationen aus – Wärme- und Stoffströme sind mein tägliches Handwerk.
+      </p>
+      <p>
+        Diese Arbeitsweise übertrage ich auf Wohngebäude: genau aufnehmen, sauber rechnen,
+        verständlich erklären. Die Rechenverfahren der DIN V 18599, nach der Gebäude energetisch
+        bewertet werden, habe ich zum besseren Verständnis selbst programmiert. Ich bin in der
+        Energieeffizienz-Expertenliste für Förderprogramme des Bundes eingetragen.
+      </p>
+    </div>
+
+    <dl class="pillars">
+      <div class="pillars__item pillars__item--red">
+        <dt>Verfahrenstechnik</dt>
+        <dd>Erfahrung mit Wärmeübertragung, Trocknung und industriellen Prozessen.</dd>
+      </div>
+      <div class="pillars__item pillars__item--green">
+        <dt>Simulation</dt>
+        <dd>Physikalische Modelle statt Faustformeln – auch für Ihr Gebäude.</dd>
+      </div>
+      <div class="pillars__item pillars__item--blue">
+        <dt>Energieberatung</dt>
+        <dd>Sanierungsfahrplan, Fördermittel und Begleitung bei der Umsetzung.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ Fragen ============ -->
+<section class="section" id="fragen">
+  <div class="wrap split split--faq">
+    <header class="section__head">
+      <h2>Häufige Fragen</h2>
+      <p>Ihre Frage ist nicht dabei? <a href="#kontakt">Schreiben Sie mir</a> oder rufen Sie an.</p>
+    </header>
+    <div class="faq">
+      {%- for f in site.data.faq %}
+      <details>
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ Kontakt ============ -->
+<section class="section section--dark" id="kontakt">
+  <div class="wrap split split--contact">
+    <div>
+      <h2>Kontakt</h2>
+      <p>Rufen Sie mich an oder schreiben Sie mir kurz, worum es geht. Ich melde mich in der Regel innerhalb von zwei Werktagen.</p>
+      <p class="contact-line">
+        <a href="tel:{{ site.phone_link }}">{{ site.phone_display }}</a><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
+
+      <h3>Einsatzgebiet</h3>
+      <p>
+        Nürnberg, Fürth, Schwabach und Erlangen sowie die Landkreise Roth und Fürth und das Nürnberger Land –
+        zum Beispiel Stein, Zirndorf, Oberasbach, Roth, Wendelstein, Rednitzhembach und Schwanstetten.
+        Andere Orte auf Anfrage.
+      </p>
+    </div>
+
+    <form class="mailform" id="mailform" data-email="{{ site.email }}" novalidate>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-ort">PLZ und Ort des Gebäudes</label>
+          <input id="f-ort" name="ort" autocomplete="postal-code" required>
+        </div>
+        <div class="field">
+          <label for="f-baujahr">Baujahr <span class="opt">(ungefähr)</span></label>
+          <input id="f-baujahr" name="baujahr" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-typ">Gebäude</label>
+        <select id="f-typ" name="typ">
+          <option>Einfamilienhaus</option>
+          <option>Zweifamilienhaus</option>
+          <option>Reihenhaus oder Doppelhaushälfte</option>
+          <option>Mehrfamilienhaus</option>
+          <option>Eigentumswohnung / WEG</option>
+        </select>
+      </div>
+      <fieldset class="field">
+        <legend>Worum geht es?</legend>
+        <label class="check"><input type="checkbox" name="anliegen" value="Sanierungsfahrplan (iSFP)"> Sanierungsfahrplan</label>
+        <label class="check"><input type="checkbox" name="anliegen" value="Heizungstausch / Wärmepumpe"> Heizung oder Wärmepumpe</label>
+        <label class="check"><input type="checkbox" name="anliegen" value="Einzelmaßnahme (Dach, Fassade, Fenster)"> Dach, Fassade oder Fenster</label>
+        <label class="check"><input type="checkbox" name="anliegen" value="Energieausweis"> Energieausweis</label>
+      </fieldset>
+      <div class="field">
+        <label for="f-text">Nachricht <span class="opt">(optional)</span></label>
+        <textarea id="f-text" name="nachricht" rows="4"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-tel">Telefon für Rückruf <span class="opt">(optional)</span></label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel">
+      </div>
+      <p class="form-error" id="mailform-error" role="alert" hidden></p>
+      <button class="btn btn--primary" type="submit">E-Mail erstellen</button>
+      <p class="form-note">
+        Der Button öffnet Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht an {{ site.email }}.
+        Diese Website speichert und überträgt Ihre Eingaben nicht.
+      </p>
+    </form>
+  </div>
+</section>

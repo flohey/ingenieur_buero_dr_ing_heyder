@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------
+# Website Ingenieurbüro Dr.-Ing. Florian Heyder (GitHub Pages / Jekyll)
+# ------------------------------------------------------------------
+
+title: Ingenieurbüro Dr.-Ing. Florian Heyder
+description: >-
+  Unabhängige Energieberatung für Bestandswohngebäude in Nürnberg, Fürth,
+  Schwabach und Umgebung: geförderter Sanierungsfahrplan (iSFP),
+  Heizungs-Check, Begleitung von Einzelmaßnahmen und Energieausweis.
+lang: de
+
+# Eigene Domain (siehe Datei CNAME). Ohne eigene Domain:
+#   url: "https://flohey.github.io"
+#   baseurl: "/ingenieur_buero_dr_ing_heyder"
+url: "https://florian-heyder.de"
+baseurl: ""
+
+# Kontaktdaten – werden überall auf der Seite verwendet
+owner: Dr.-Ing. Florian Heyder
+phone_display: "0175 6685377"
+phone_link: "+491756685377"
+email: info@florian-heyder.de
+address:
+  street: "Johann-Appler-Str. 11"
+  zip: "91126"
+  city: Schwabach
+
+# Stand der Förderangaben auf der Startseite
+foerder_stand: November 2026
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - LICENSE
+  - tools/

@@ -1,29 +1,99 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{{ site.lang | default: 'de' }}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.title_full -%}
+    {%- assign doc_title = page.title_full -%}
+  {%- else -%}
+    {%- assign doc_title = page.title | append: ' | ' | append: site.title -%}
+  {%- endif %}
+  <title>{{ doc_title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- if page.noindex %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ doc_title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/logo-heyder.png' | absolute_url }}">
+
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preload" href="{{ '/assets/fonts/barlow-semi-condensed-latin-600-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/source-sans-3-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <meta name="theme-color" content="#1E2D38">
+  {%- if page.schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description | strip | replace: '"', '' }}",
+    "url": "{{ '/' | absolute_url }}",
+    "logo": "{{ '/assets/img/logo-heyder.png' | absolute_url }}",
+    "telephone": "{{ site.phone_link }}",
+    "email": "{{ site.email }}",
+    "founder": { "@type": "Person", "name": "{{ site.owner }}", "honorificPrefix": "Dr.-Ing." },
+    "address": { "@type": "PostalAddress", "postalCode": "{{ site.address.zip }}", "addressLocality": "{{ site.address.city }}", "addressCountry": "DE" },
+    "areaServed": ["Nürnberg", "Fürth", "Schwabach", "Erlangen", "Landkreis Roth", "Landkreis Fürth", "Nürnberger Land"],
+    "knowsAbout": ["Energieberatung", "Individueller Sanierungsfahrplan", "Bundesförderung für effiziente Gebäude", "Wärmepumpe", "Energieausweis"]
+  }
+  </script>
+  {%- endif %}
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <header>
-    <div class="container">
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Startseite – {{ site.title }}">
+        <img src="{{ '/assets/img/logo-heyder.png' | relative_url }}" alt="{{ site.title }} – Energieberatung &amp; Ingenieurleistungen" width="518" height="163">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+        {%- assign home = '/' | relative_url %}
+        <a href="{{ home }}#leistungen">Leistungen</a>
+        <a href="{{ home }}#foerderung">Förderung</a>
+        <a href="{{ home }}#ablauf">Ablauf</a>
+        <a href="{{ home }}#ueber-mich">Über mich</a>
+        <a href="{{ home }}#fragen">Fragen</a>
+        <a class="site-nav__cta" href="{{ home }}#kontakt">Kontakt</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main id="inhalt">
     {{ content }}
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© {{ site.time | date: "%Y" }} Ingenieurbüro Dr.-Ing. Heyder</p>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div class="site-footer__brand">
+        <img src="{{ '/assets/img/logo-heyder.png' | relative_url }}" alt="" width="518" height="163" loading="lazy">
+      </div>
+      <address class="site-footer__contact">
+        {{ site.owner }}<br>
+        {{ site.address.street }}<br>
+        {{ site.address.zip }} {{ site.address.city }}<br>
+        <a href="tel:{{ site.phone_link }}">{{ site.phone_display }}</a><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </address>
+      <nav class="site-footer__legal" aria-label="Rechtliches">
+        <a href="{{ '/impressum/' | relative_url }}">Impressum</a>
+        <a href="{{ '/datenschutz/' | relative_url }}">Datenschutz</a>
+        <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+      </nav>
     </div>
   </footer>
 
+  <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
 </body>
 </html>
